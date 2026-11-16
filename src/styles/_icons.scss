@@ -1,0 +1,36 @@
+$icons-font-dir: '../../node_modules/bootstrap-icons/font/fonts';
+
+$icons: (
+  'search': '\f52a',
+  'x': '\f62a',
+  'pencil': '\f4cb',
+  'trash': '\f5de',
+  'sort-alpha-down': '\f571',
+  'sort-alpha-down-alt': '\f570',
+  'sort-numeric-down': '\f577',
+  'sort-numeric-down-alt': '\f576',
+);
+
+@font-face {
+  font-display: block;
+  font-family: 'bootstrap-icons';
+  src:
+    url('#{$icons-font-dir}/bootstrap-icons.woff2') format('woff2'),
+    url('#{$icons-font-dir}/bootstrap-icons.woff') format('woff');
+}
+
+.bi::before {
+  display: inline-block;
+  font-family: 'bootstrap-icons' !important;
+  font-style: normal;
+  font-weight: normal !important;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+}
+
+@each $name, $codepoint in $icons {
+  .bi-#{$name}::before {
+    content: $codepoint;
+  }
+}

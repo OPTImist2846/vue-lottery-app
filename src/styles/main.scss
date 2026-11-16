@@ -1,0 +1,87 @@
+$primary: #3bafda;
+$danger: #e9573f;
+$success: #37bc9b;
+$body-bg: #f3f3f3;
+$body-color: #333;
+$font-family-sans-serif:
+  'Open Sans',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  sans-serif;
+$font-size-base: 0.875rem;
+$border-radius: 0.125rem;
+$border-radius-sm: 0.125rem;
+$border-radius-lg: 0.25rem;
+$input-bg: #fafafa;
+$input-border-color: #ececec;
+$input-placeholder-color: #aaa;
+$card-border-color: #e3e3e3;
+$card-bg: #fff;
+$card-spacer-y: 1rem;
+$card-spacer-x: 1rem;
+$btn-padding-x: 1rem;
+$enable-shadows: false;
+$link-decoration: none;
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+
+$utilities: map-get-multiple(
+  $utilities,
+  (
+    'display',
+    'gap',
+    'align-items',
+    'justify-content',
+    'margin-bottom',
+    'padding-y',
+    'padding-top',
+    'font-size',
+    'font-weight',
+    'text-align',
+    'text-transform',
+    'white-space',
+    'word-wrap',
+    'color'
+  )
+);
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';
+@import 'icons';
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-color: #fff;
+}
+
+.lottery {
+  max-width: 62rem;
+}
+
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.invalid-feedback {
+  font-size: 0.75rem;
+}
