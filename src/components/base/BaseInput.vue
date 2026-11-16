@@ -7,15 +7,17 @@ const {
   placeholder = undefined,
   error = undefined,
   valid = false,
+  min = undefined,
   max = undefined,
   autocomplete = undefined,
 } = defineProps<{
   label?: string
-  type?: 'text' | 'email' | 'tel' | 'date' | 'search'
+  type?: 'text' | 'email' | 'tel' | 'date' | 'search' | 'password' | 'number'
   placeholder?: string
   error?: string
   valid?: boolean
-  max?: string
+  min?: string | number
+  max?: string | number
   autocomplete?: string
 }>()
 
@@ -23,7 +25,7 @@ const emit = defineEmits<{
   blur: []
 }>()
 
-const model = defineModel<string>({ required: true })
+const model = defineModel<string | number | undefined>({ required: true })
 
 const id = useId()
 const errorId = `${id}-error`
@@ -39,6 +41,7 @@ const errorId = `${id}-error`
       :class="{ 'is-invalid': error, 'is-valid': valid && !error }"
       :type="type"
       :placeholder="placeholder"
+      :min="min"
       :max="max"
       :autocomplete="autocomplete"
       :aria-label="label ? undefined : placeholder"

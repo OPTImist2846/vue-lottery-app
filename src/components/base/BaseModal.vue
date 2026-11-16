@@ -90,6 +90,11 @@ onBeforeUnmount(() => document.body.classList.remove('modal-open'))
   opacity: 0;
 }
 
+.modal-backdrop-leave-active,
+.modal-leave-active {
+  pointer-events: none;
+}
+
 .modal-enter-active,
 .modal-leave-active {
   transition: opacity 0.2s ease;
