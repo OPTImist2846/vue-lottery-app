@@ -3,15 +3,23 @@ import { ref, watch } from 'vue'
 import BaseInput from '@/components/base/BaseInput.vue'
 import { FILTER_DEBOUNCE_MS } from '@/constants'
 
-const { placeholder = 'Search by name' } = defineProps<{
+const { placeholder = 'Search by name', initialQuery = '' } = defineProps<{
   placeholder?: string
+  initialQuery?: string
 }>()
 
 const emit = defineEmits<{
   'filter-by-name': [query: string]
 }>()
 
-const query = ref('')
+const query = ref(initialQuery)
+
+watch(
+  () => initialQuery,
+  (value) => {
+    if (value !== query.value.trim()) query.value = value
+  },
+)
 
 watch(query, (value, _previous, onCleanup) => {
   const timer = setTimeout(() => emit('filter-by-name', value.trim()), FILTER_DEBOUNCE_MS)

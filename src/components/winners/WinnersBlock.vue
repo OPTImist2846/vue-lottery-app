@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import BaseButton from '@/components/base/BaseButton.vue'
 import WinnerItem from '@/components/winners/WinnerItem.vue'
-import type { Participant } from '@/types/participant'
+import type { User } from '@/types/user'
+import { fullName } from '@/utils/user'
 
 const { winners, canDraw } = defineProps<{
-  winners: Participant[]
+  winners: User[]
   canDraw: boolean
 }>()
 
 const emit = defineEmits<{
   draw: []
-  remove: [id: string]
+  remove: [id: number]
 }>()
 </script>
 
@@ -22,7 +23,7 @@ const emit = defineEmits<{
           <WinnerItem
             v-for="winner in winners"
             :key="winner.id"
-            :name="winner.name"
+            :name="fullName(winner)"
             @remove="emit('remove', winner.id)"
           />
         </TransitionGroup>
