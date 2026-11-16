@@ -32,3 +32,5 @@ coverage
 __screenshots__/
 
 *.timestamp-*-*.mjs
+
+.env

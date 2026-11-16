@@ -9,6 +9,8 @@ export default mergeConfig(
       environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
+      setupFiles: ['./src/__tests__/setup.ts'],
+      env: { VITE_API_URL: 'https://api.test', VITE_AUTH_EXPIRES_IN_MINS: '30' },
     },
   }),
 )
