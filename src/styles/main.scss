@@ -36,10 +36,23 @@ $utilities: map-get-multiple(
   $utilities,
   (
     'display',
+    'flex',
+    'flex-direction',
+    'flex-grow',
+    'flex-wrap',
+    'rounded',
+    'width',
+    'object-fit',
     'gap',
     'align-items',
     'justify-content',
+    'margin',
+    'margin-x',
+    'margin-top',
+    'margin-end',
     'margin-bottom',
+    'margin-start',
+    'padding',
     'padding-y',
     'padding-top',
     'font-size',
@@ -48,18 +61,26 @@ $utilities: map-get-multiple(
     'text-transform',
     'white-space',
     'word-wrap',
-    'color'
+    'color',
+    'background-color',
+    'text-decoration'
   )
 );
 
 @import 'bootstrap/scss/root';
 @import 'bootstrap/scss/reboot';
 @import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
 @import 'bootstrap/scss/forms';
 @import 'bootstrap/scss/buttons';
 @import 'bootstrap/scss/tables';
 @import 'bootstrap/scss/card';
 @import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/list-group';
 @import 'bootstrap/scss/close';
 @import 'bootstrap/scss/modal';
 @import 'bootstrap/scss/helpers';
@@ -73,8 +94,25 @@ $utilities: map-get-multiple(
   --bs-btn-disabled-color: #fff;
 }
 
-.lottery {
-  max-width: 62rem;
+.app-container {
+  max-width: 64rem;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .form-label {
